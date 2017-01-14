@@ -7,6 +7,12 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  // 3rd party CSS
+  app.import('vendor/semantic/dist/semantic.min.css')
+
+  // 3rd party JS
+  app.import('vendor/semantic/dist/semantic.min.js')
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
