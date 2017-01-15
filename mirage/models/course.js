@@ -9,5 +9,6 @@ export default Model.extend({
   startDate: attr('date'),
   endDate: attr('date'),
   classSize: attr('number'),
+  evaluation: belongsTo('evaluation'),
   instructor: belongsTo('instructor'),
 });
