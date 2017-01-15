@@ -6,10 +6,10 @@ export default Model.extend({
   grade: attr('string'),
   instructor: belongsTo('instructor', {
     async: true,
-    inverse: 'instructor',
+    inverse: 'evaluations',
   }),
   course: belongsTo('course', {
     async: true,
-    inverse: 'course',
+    inverse: 'evaluation',
   }),
 });

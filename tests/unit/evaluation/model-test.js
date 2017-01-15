@@ -2,7 +2,10 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('evaluation', 'Unit | Model | evaluation', {
   // Specify the other units that are required for this test.
-  needs: [],
+  needs: [
+    'model:course',
+    'model:instructor',
+  ],
 });
 
 test('it exists', function run(assert) {

@@ -11,14 +11,5 @@ test('it renders', function render(assert) {
 
   this.render(hbs`{{cuppa-application-nav}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#cuppa-application-nav}}
-      template block text
-    {{/cuppa-application-nav}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('a').length, 3);
 });
