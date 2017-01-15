@@ -4,7 +4,7 @@ module.exports = {
     ecmaVersion: 6,
     sourceType: 'module'
   },
-  extends: 'eslint:recommended',
+  extends: 'airbnb-base',
   env: {
     browser: true
   },
