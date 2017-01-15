@@ -9,5 +9,9 @@ module.exports = {
     browser: true
   },
   rules: {
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "space-before-function-paren": 0,
   }
 };
