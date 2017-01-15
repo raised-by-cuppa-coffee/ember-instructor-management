@@ -1,9 +1,9 @@
 {
-  "name": "ember-baseline-app",
-  "version": "0.0.2",
-  "description": "Baseline application for Ember frontends",
+  "name": "ember-instructor-management",
+  "version": "0.1.1",
+  "description": "Web frontend to the instructor management application",
   "license": "MIT",
-  "author": "",
+  "author": "Adam Gribble",
   "directories": {
     "doc": "doc",
     "test": "tests"
