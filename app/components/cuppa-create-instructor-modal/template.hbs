@@ -1,0 +1,25 @@
+<i class="close icon"></i>
+<div class="header">
+  Create a New Instructor
+</div>
+<div class="content">
+  {{#cuppa-form}}
+  <div class="required field">
+    <label>First Name</label>
+    {{input type="text"}}
+  </div>
+  <div class="required field">
+    <label>Middle Name</label>
+    {{input type="text"}}
+  </div>
+  <div class="required field">
+    <label>Last Name</label>
+    {{input type="text"}}
+  </div>
+{{/cuppa-form}}
+</div>
+<div class="actions">
+  <button onclick={{action "create"}} class="ui primary button">
+    Create
+  </button>
+</div>

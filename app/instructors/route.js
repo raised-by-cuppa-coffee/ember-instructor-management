@@ -1,4 +1,14 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const { $, Route } = Ember;
+
+export default Route.extend({
+  actions: {
+    closeModal(name) {
+      $(`.ui.${name}.modal`).modal('hide');
+    },
+    openModal(name) {
+      $(`.ui.${name}.modal`).modal('show');
+    },
+  },
 });
