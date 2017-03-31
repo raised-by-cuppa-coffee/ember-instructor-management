@@ -53,6 +53,8 @@
   },
   "private": true,
   "dependencies": {
+    "ember-changeset": "1.2.0",
+    "ember-changeset-validations": "1.2.4",
     "ember-data": "^2.12.1",
     "semantic-ui": "^2.2.7"
   }
