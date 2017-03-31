@@ -7,8 +7,10 @@
   </h3>
 </div>
 <div class="ui basic segment">
-  <p>Content here</p>
+  {{#each model as |instructor|}}
+    {{instructor.firstName}} | {{instructor.middleName}} | {{instructor.lastName}}
+  {{/each}}
 </div>
-{{cuppa-create-instructor-modal}}
+{{cuppa-create-instructor-modal onCreate=(route-action 'createInstructor')}}
 
 {{outlet}}

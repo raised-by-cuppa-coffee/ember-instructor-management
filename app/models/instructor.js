@@ -5,7 +5,7 @@ const { attr, hasMany, Model } = DS;
 export default Model.extend({
   firstName: attr('string'),
   middleName: attr('string'),
-  lastName: attr('lastName'),
+  lastName: attr('string'),
   addresses: hasMany('address', {
     async: true,
     inverse: 'instructor',
