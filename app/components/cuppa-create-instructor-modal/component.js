@@ -1,14 +1,15 @@
 import UiModal from 'semantic-ui-ember/components/ui-modal';
+import InstructorValidations from '../../validations/instructor';
 
 export default UiModal.extend({
   classNames: ['new-instructor'],
   name: 'new-instructor',
 
-  data: {},
+  InstructorValidations,
 
   actions: {
-    create() {
-      this.get('onCreate')(this.get('data'));
+    create(instructor) {
+      this.get('onSave')(instructor);
       this.execute('hide');
     },
   },

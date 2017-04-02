@@ -3,23 +3,18 @@
   Create a New Instructor
 </div>
 <div class="content">
-  {{#cuppa-form}}
+  {{#cuppa-form onSubmit=(action "create") changeset=(changeset data InstructorValidations) as |form|}}
   <div class="required field">
     <label>First Name</label>
-    {{input type="text" value=(mut data.firstName)}}
+    {{input type="text" value=form.changeset.firstName}}
   </div>
   <div class="required field">
     <label>Middle Name</label>
-    {{input type="text" value=(mut data.middleName)}}
+    {{input type="text" value=form.changeset.middleName}}
   </div>
   <div class="required field">
     <label>Last Name</label>
-    {{input type="text" value=(mut data.lastName)}}
+    {{input type="text" value=form.changeset.lastName}}
   </div>
 {{/cuppa-form}}
-</div>
-<div class="actions">
-  <button onclick={{action "create"}} class="ui primary button">
-    Create
-  </button>
 </div>

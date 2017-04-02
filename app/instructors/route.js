@@ -6,6 +6,10 @@ export default Route.extend({
   model(params) {
     return this.get('store').query('instructor', params);
   },
+  setupController(controller) {
+    this._super(...arguments);
+    controller.set('newInstructor', this.get('store').createRecord('instructor', {}));
+  },
 
   actions: {
     closeModal(name) {
@@ -14,10 +18,10 @@ export default Route.extend({
     openModal(name) {
       $(`.ui.${name}.modal`).modal('show');
     },
-    createInstructor(data) {
-      let model = this.get('store').createRecord('instructor', data);
-      model.save();
-      this.refresh();
+    createInstructor(model) {
+      model.save()
+        .then(() => this.controller.set('newInstructor', this.get('store').createRecord('instructor', {})))
+        .catch(alert);
     },
   },
 });

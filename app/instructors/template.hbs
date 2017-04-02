@@ -11,6 +11,8 @@
     {{instructor.firstName}} | {{instructor.middleName}} | {{instructor.lastName}}
   {{/each}}
 </div>
-{{cuppa-create-instructor-modal onCreate=(route-action 'createInstructor')}}
+{{#if newInstructor}}
+  {{cuppa-create-instructor-modal data=newInstructor onSave=(route-action 'createInstructor')}}
+{{/if}}
 
 {{outlet}}
