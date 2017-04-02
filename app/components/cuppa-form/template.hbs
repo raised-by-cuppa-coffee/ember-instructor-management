@@ -9,6 +9,6 @@
   </div>
 {{/if}}
 {{yield (hash changeset=changeset)}}
-<button {{action "submit"}} class="ui primary button">
+<button {{action "submit"}} class="ui primary button {{if hasErrors 'disabled'}}">
   Create
 </button>

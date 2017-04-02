@@ -15,6 +15,9 @@ export default Component.extend({
 
   actions: {
     submit() {
+      // Force validation of entire form
+      this.get('changeset').validate();
+
       if (this.get('changeset.isValid')) {
         this.get('onSubmit')(this.get('changeset'));
       }
