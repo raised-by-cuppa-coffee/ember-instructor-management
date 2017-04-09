@@ -18,6 +18,7 @@ export default function () {
   this.get('/evaluations');
 
   this.get('/instructors');
+  this.post('/instructors');
 
   this.get('/phones');
 

@@ -10,7 +10,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-
+  this.route('instructors', function() {
+    this.route('new');
+  });
 });
 
 export default Router;

@@ -1,0 +1,18 @@
+<div class="ui basic clearing segment">
+  <h3 class="ui right floated header">
+    <button onclick={{route-action "openModal" "new-instructor"}} class="ui blue button">
+      <i class="plus icon"></i>
+      Create New
+     </button>
+  </h3>
+</div>
+<div class="ui basic segment">
+  {{#each model as |instructor|}}
+    {{instructor.firstName}} | {{instructor.middleName}} | {{instructor.lastName}}
+  {{/each}}
+</div>
+{{#if newInstructor}}
+  {{cuppa-create-instructor-modal data=newInstructor onSave=(route-action 'createInstructor')}}
+{{/if}}
+
+{{outlet}}

@@ -1,5 +1,8 @@
 <div class="ui massive inverted menu" local-class="flat-nav">
-  <a class="active item">Home</a>
-  <a class="item">Messages</a>
-  <a class="item">About</a>
+  {{#link-to "index" classNames="item"}}
+    Home
+  {{/link-to}}
+  {{#link-to "instructors" classNames="item"}}
+    Instructors
+  {{/link-to}}
 </div>
