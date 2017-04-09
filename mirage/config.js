@@ -18,7 +18,12 @@ export default function () {
   this.get('/evaluations');
 
   this.get('/instructors');
-  this.post('/instructors');
+  this.post('/instructors', function({ instructors }) {
+    let attrs = this.normalizedRequestAttrs();
+    attrs.createdAt = new Date();
+
+    return instructors.create(attrs);
+  });
 
   this.get('/phones');
 

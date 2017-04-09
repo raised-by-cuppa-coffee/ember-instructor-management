@@ -7,9 +7,16 @@
   </h3>
 </div>
 <div class="ui basic segment">
-  {{#each model as |instructor|}}
-    {{instructor.firstName}} | {{instructor.middleName}} | {{instructor.lastName}}
-  {{/each}}
+  <div class="ui link cards">
+    {{#each model as |instructor|}}
+      {{cuppa-instructor-card
+          firstName=instructor.firstName
+          middleName=instructor.middleName
+          lastName=instructor.lastName
+          createdAt=instructor.createdAt
+      }}
+    {{/each}}
+  </div>
 </div>
 {{#if newInstructor}}
   {{cuppa-create-instructor-modal data=newInstructor onSave=(route-action 'createInstructor')}}
