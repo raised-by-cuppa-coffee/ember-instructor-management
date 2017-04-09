@@ -1,5 +1,5 @@
 <div class="ui basic segment">
-  {{cuppa-search-bar}}
+  {{cuppa-search-bar onSearch=(route-action 'searchInstructors')}}
 </div>
 <div class="ui basic segment">
   <button onclick={{route-action "openModal" "new-instructor"}} class="ui blue right floated button">
@@ -8,16 +8,7 @@
     </button>
 </div>
 <div class="ui basic segment">
-  <div class="ui link cards">
-    {{#each model as |instructor|}}
-      {{cuppa-instructor-card
-          firstName=instructor.firstName
-          middleName=instructor.middleName
-          lastName=instructor.lastName
-          createdAt=instructor.createdAt
-      }}
-    {{/each}}
-  </div>
+  {{outlet}}
 </div>
 {{#if newInstructor}}
   {{cuppa-create-instructor-modal data=newInstructor onSave=(route-action 'createInstructor')}}

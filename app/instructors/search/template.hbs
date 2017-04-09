@@ -1,0 +1,10 @@
+<div class="ui link cards">
+  {{#each model as |instructor|}}
+    {{cuppa-instructor-card
+        firstName=instructor.firstName
+        middleName=instructor.middleName
+        lastName=instructor.lastName
+        createdAt=instructor.createdAt
+    }}
+  {{/each}}
+</div>
