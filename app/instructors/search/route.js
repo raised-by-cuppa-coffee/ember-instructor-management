@@ -6,6 +6,12 @@ export default Route.extend({
   queryParams: {
     q: {
       refreshModel: true
+    },
+    limit: {
+      refreshModel: true
+    },
+    skip: {
+      refreshModel: true
     }
   },
 

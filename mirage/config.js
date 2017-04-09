@@ -19,7 +19,7 @@ export default function () {
 
   this.get('/instructors', function({ instructors }, { queryParams }) {
     let results = instructors.all();
-    let q = queryParams.q;
+    let { q, limit, skip } = queryParams;
 
     if (q && q !== '*') {
       results = results.filter((model) => (
@@ -30,6 +30,9 @@ export default function () {
         })
       ));
     }
+
+    results.meta = { total: results.models.length };
+    results.models = results.models.slice(parseInt(skip, 10), parseInt(limit, 10) + parseInt(skip, 10));
 
     return results;
   });
