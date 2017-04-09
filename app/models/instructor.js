@@ -6,6 +6,7 @@ export default Model.extend({
   firstName: attr('string'),
   middleName: attr('string'),
   lastName: attr('string'),
+  createdAt: attr('date'),
   addresses: hasMany('address', {
     async: true,
     inverse: 'instructor',
