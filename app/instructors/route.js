@@ -4,7 +4,6 @@ const { $, Route } = Ember;
 
 export default Route.extend({
   model(params) {
-    console.log(params);
     return this.get('store').query('instructor', params);
   },
   setupController(controller) {
