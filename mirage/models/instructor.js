@@ -6,7 +6,8 @@ const { attr } = DS;
 export default Model.extend({
   firstName: attr('string'),
   middleName: attr('string'),
-  lastName: attr('lastName'),
+  lastName: attr('string'),
+  createdAt: attr('date'),
   addresses: hasMany('address'),
   phones: hasMany('phone'),
   emails: hasMany('email'),
