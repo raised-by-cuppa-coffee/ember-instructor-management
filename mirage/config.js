@@ -17,7 +17,22 @@ export default function () {
 
   this.get('/evaluations');
 
-  this.get('/instructors');
+  this.get('/instructors', function({ instructors }, { queryParams }) {
+    let results = instructors.all();
+    let q = queryParams.q;
+
+    if (q && q !== '*') {
+      results = results.filter((model) => (
+        q.split(' ').any(function(word) {
+          if (model.firstName === word || model.middleName === word || model.lastName === word) {
+            return true;
+          }
+        })
+      ));
+    }
+
+    return results;
+  });
   this.post('/instructors', function({ instructors }) {
     let attrs = this.normalizedRequestAttrs();
     attrs.createdAt = new Date();

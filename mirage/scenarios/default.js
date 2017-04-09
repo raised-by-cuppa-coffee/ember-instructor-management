@@ -7,5 +7,5 @@ export default function (server) {
     Make sure to define a factory for each model you want to create.
   */
 
-  server.createList('instructor', 10);
+  server.createList('instructor', 147);
 }
