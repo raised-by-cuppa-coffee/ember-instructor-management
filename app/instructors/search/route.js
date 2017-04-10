@@ -18,4 +18,15 @@ export default Route.extend({
   model(params) {
     return this.get('store').query('instructor', params);
   },
+
+  actions: {
+    paginate(page) {
+      this.transitionTo({
+        queryParams: {
+          limit: this.controller.get('limit'),
+          skip: this.controller.get('limit') * page
+        }
+      }).then(() => this.controller.set('page', page));
+    }
+  }
 });
