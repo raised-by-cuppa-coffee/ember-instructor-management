@@ -1,0 +1,15 @@
+<div class="ui basic segment">
+  {{cuppa-search-bar onSearch=(route-action 'searchInstructors')}}
+</div>
+<div class="ui basic right aligned segment">
+  <button onclick={{route-action "openModal" "new-instructor"}} class="ui blue button">
+    <i class="plus icon"></i>
+    Create New
+    </button>
+</div>
+<div class="ui basic segment">
+  {{outlet}}
+</div>
+{{#if newInstructor}}
+  {{cuppa-create-instructor-modal data=newInstructor onSave=(route-action 'createInstructor')}}
+{{/if}}

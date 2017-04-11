@@ -1,0 +1,21 @@
+{{#unless (eq totalPages 0)}}
+  <div class="ui stackable three column grid">
+    {{#each model as |instructor|}}
+      <div class="column">
+        {{cuppa-instructor-card
+            firstName=instructor.firstName
+            middleName=instructor.middleName
+            lastName=instructor.lastName
+            createdAt=instructor.createdAt
+        }}
+      </div>
+    {{/each}}
+  </div>
+  <div class="ui basic center aligned segment">
+    {{cuppa-pagination-bar activePage=activePage pageSize=limit totalPages=totalPages onPaginate=(route-action 'paginate')}}
+  </div>
+{{else}}
+  <div class="ui basic center aligned segment">
+    <h1 class="ui disabled header">No instructors found</h1>
+  </div>
+{{/unless}}

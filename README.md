@@ -1,7 +1,6 @@
-# ember-baseline-app
+# ember-instructor-management
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A web frontend for interacting and managing instructor profiles.
 
 ## Prerequisites
 
@@ -16,7 +15,7 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd ember-baseline-app`
+* `cd ember-instructor-management`
 * `npm install`
 * `bower install`
 
@@ -41,7 +40,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+TODO
 
 ## Further Reading / Useful Links
 

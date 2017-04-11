@@ -1,7 +1,8 @@
 {
-  "name": "ember-baseline-app",
+  "name": "ember-instructor-management",
   "dependencies": {
-    "ember": "~2.10.0",
-    "ember-cli-shims": "0.1.3"
+    "ember": "v2.12.0",
+    "ember-cli-shims": "0.1.3",
+    "semantic-ui": "^2.2.9"
   }
 }
