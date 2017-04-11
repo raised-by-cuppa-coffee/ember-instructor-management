@@ -43,7 +43,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // production stuff here
+    // Only keep this while deploying to surge
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    };
   }
 
   return ENV;
