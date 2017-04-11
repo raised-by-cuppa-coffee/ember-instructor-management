@@ -1,15 +1,15 @@
-<div class="ui basic segment">
-  {{cuppa-pagination-bar activePage=page pageSize=limit totalItems=model.meta.total}}
-</div>
-<div class="ui basic segment">
-  <div class="ui link cards">
+  <div class="ui stackable three column grid">
     {{#each model as |instructor|}}
-      {{cuppa-instructor-card
-          firstName=instructor.firstName
-          middleName=instructor.middleName
-          lastName=instructor.lastName
-          createdAt=instructor.createdAt
-      }}
+      <div class="column">
+        {{cuppa-instructor-card
+            firstName=instructor.firstName
+            middleName=instructor.middleName
+            lastName=instructor.lastName
+            createdAt=instructor.createdAt
+        }}
+      </div>
     {{/each}}
   </div>
+<div class="ui basic center aligned segment">
+  {{cuppa-pagination-bar activePage=activePage pageSize=limit totalPages=totalPages onPaginate=(route-action 'paginate')}}
 </div>
