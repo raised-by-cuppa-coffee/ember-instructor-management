@@ -11,8 +11,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('instructors', function() {
-    this.route('new');
     this.route('search');
+    this.route('instructor', { path: '/:instructor_id'});
   });
 });
 
