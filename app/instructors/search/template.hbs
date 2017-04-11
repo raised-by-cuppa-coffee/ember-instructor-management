@@ -14,4 +14,8 @@
   <div class="ui basic center aligned segment">
     {{cuppa-pagination-bar activePage=activePage pageSize=limit totalPages=totalPages onPaginate=(route-action 'paginate')}}
   </div>
+{{else}}
+  <div class="ui basic center aligned segment">
+    <h1 class="ui disabled header">No instructors found</h1>
+  </div>
 {{/unless}}
