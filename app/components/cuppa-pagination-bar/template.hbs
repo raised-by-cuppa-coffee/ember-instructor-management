@@ -1,3 +1,9 @@
+<button class="ui icon button" {{action 'prevPage'}}>
+  <i class="left arrow icon"></i>
+</button>
 {{#each paginateButtons as |btn|}}
-  <button class="ui button">{{btn}}</button>
+  <button class="ui button {{if (eq btn activePage) 'active'}}">{{btn}}</button>
 {{/each}}
+<button class="ui icon button" {{action 'nextPage'}}>
+  <i class="right arrow icon"></i>
+</button>
