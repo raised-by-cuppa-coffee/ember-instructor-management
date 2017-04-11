@@ -3,9 +3,6 @@ import Ember from 'ember';
 const { $, Route } = Ember;
 
 export default Route.extend({
-  model(params) {
-    return this.get('store').query('instructor', params);
-  },
   setupController(controller) {
     this._super(...arguments);
     controller.set('newInstructor', this.get('store').createRecord('instructor', {}));
@@ -24,5 +21,8 @@ export default Route.extend({
         .then(() => this.refresh())
         .catch(alert);
     },
+    searchInstructors(queryParams) {
+      return this.transitionTo('instructors.search', { queryParams: { q: queryParams }});
+    }
   },
 });

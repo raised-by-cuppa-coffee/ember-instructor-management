@@ -1,25 +1,15 @@
-<div class="ui basic clearing segment">
-  <h3 class="ui right floated header">
-    <button onclick={{route-action "openModal" "new-instructor"}} class="ui blue button">
-      <i class="plus icon"></i>
-      Create New
-     </button>
-  </h3>
+<div class="ui basic segment">
+  {{cuppa-search-bar onSearch=(route-action 'searchInstructors')}}
+</div>
+<div class="ui basic right aligned segment">
+  <button onclick={{route-action "openModal" "new-instructor"}} class="ui blue button">
+    <i class="plus icon"></i>
+    Create New
+    </button>
 </div>
 <div class="ui basic segment">
-  <div class="ui link cards">
-    {{#each model as |instructor|}}
-      {{cuppa-instructor-card
-          firstName=instructor.firstName
-          middleName=instructor.middleName
-          lastName=instructor.lastName
-          createdAt=instructor.createdAt
-      }}
-    {{/each}}
-  </div>
+  {{outlet}}
 </div>
 {{#if newInstructor}}
   {{cuppa-create-instructor-modal data=newInstructor onSave=(route-action 'createInstructor')}}
 {{/if}}
-
-{{outlet}}

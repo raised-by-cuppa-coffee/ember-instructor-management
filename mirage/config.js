@@ -17,7 +17,25 @@ export default function () {
 
   this.get('/evaluations');
 
-  this.get('/instructors');
+  this.get('/instructors', function({ instructors }, { queryParams }) {
+    let results = instructors.all();
+    let { q, limit, skip } = queryParams;
+
+    if (q && q !== '*') {
+      results = results.filter((model) => (
+        q.split(' ').any(function(word) {
+          if (model.firstName === word || model.middleName === word || model.lastName === word) {
+            return true;
+          }
+        })
+      ));
+    }
+
+    results.meta = { total: results.models.length };
+    results.models = results.models.slice(parseInt(skip, 10), parseInt(limit, 10) + parseInt(skip, 10));
+
+    return results;
+  });
   this.post('/instructors', function({ instructors }) {
     let attrs = this.normalizedRequestAttrs();
     attrs.createdAt = new Date();
