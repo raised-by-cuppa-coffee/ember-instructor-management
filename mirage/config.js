@@ -17,6 +17,7 @@ export default function () {
 
   this.get('/evaluations');
 
+  this.get('/instructors/:id')
   this.get('/instructors', function({ instructors }, { queryParams }) {
     let results = instructors.all();
     let { q, limit, skip } = queryParams;

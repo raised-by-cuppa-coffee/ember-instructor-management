@@ -12,7 +12,16 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('instructors', function() {
     this.route('search');
-    this.route('instructor', { path: '/:instructor_id'});
+    this.route('instructor', { path: '/:instructor_id'}, function() {
+      this.route('summary');
+      this.route('addresses');
+      this.route('courses');
+      this.route('education');
+      this.route('emails');
+      this.route('evals');
+      this.route('phones');
+      this.route('skills');
+    });
   });
 });
 
