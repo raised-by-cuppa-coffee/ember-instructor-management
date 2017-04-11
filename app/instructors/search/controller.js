@@ -12,6 +12,6 @@ export default Controller.extend({
   activePage: 1,
 
   totalPages: computed('limit', 'model.meta.total', function() {
-    return Math.floor(this.get('model.meta.total') / this.get('limit'));
+    return Math.ceil(this.get('model.meta.total') / this.get('limit'));
   })
 });

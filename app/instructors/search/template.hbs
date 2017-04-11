@@ -1,3 +1,4 @@
+{{#unless (eq totalPages 0)}}
   <div class="ui stackable three column grid">
     {{#each model as |instructor|}}
       <div class="column">
@@ -10,6 +11,7 @@
       </div>
     {{/each}}
   </div>
-<div class="ui basic center aligned segment">
-  {{cuppa-pagination-bar activePage=activePage pageSize=limit totalPages=totalPages onPaginate=(route-action 'paginate')}}
-</div>
+  <div class="ui basic center aligned segment">
+    {{cuppa-pagination-bar activePage=activePage pageSize=limit totalPages=totalPages onPaginate=(route-action 'paginate')}}
+  </div>
+{{/unless}}
