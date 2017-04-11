@@ -20,6 +20,8 @@ export default Component.extend({
   
   _search() {
     this.set('isSearching', true);
-    this.get('onSearch')(this.get('q')).then(() => this.set('isSearching', false));
+    this.get('onSearch')(this.get('q')).finally(() => {
+      this.set('isSearching', false)
+    });
   }
 });
