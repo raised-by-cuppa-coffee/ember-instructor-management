@@ -23,6 +23,7 @@ Router.map(function() {
       this.route('skills');
     });
   });
+  this.route('instructor-base');
 });
 
 export default Router;
