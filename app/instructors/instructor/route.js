@@ -3,6 +3,9 @@ import Ember from 'ember';
 const { Route } = Ember;
 
 export default Route.extend({
+  model(params) {
+    return this.get('store').findRecord('instructor', params.instructor_id);
+  },
   setupController(controller) {
     this._super(...arguments);
 

@@ -28,8 +28,8 @@ export default Route.extend({
         }
       }).then(() => this.controller.set('activePage', page));
     },
-    viewFull(instructor) {
-      this.transitionTo('instructors.instructor', instructor);
+    viewFull(instructorId) {
+      this.transitionTo('instructors.instructor', instructorId);
     }
   }
 });

@@ -7,7 +7,7 @@
             middleName=instructor.middleName
             lastName=instructor.lastName
             createdAt=instructor.createdAt
-            onClick=(route-action 'viewFull' instructor)
+            onClick=(route-action 'viewFull' instructor.id)
         }}
       </div>
     {{/each}}
