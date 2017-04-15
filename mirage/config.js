@@ -8,6 +8,7 @@ export default function () {
   */
 
   this.get('/addresses');
+  this.post('/addresses');
 
   this.get('/courses');
 
