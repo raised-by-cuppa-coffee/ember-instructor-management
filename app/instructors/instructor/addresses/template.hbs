@@ -1,0 +1,54 @@
+{{#unless newItem}}
+  <button onclick={{route-action "createNew" "address"}} class="fluid ui button"><i class="plus icon"></i> Add Address</button>
+  {{#each model.addresses as |address index|}}
+    {{#cuppa-removable-container onRemove=(route-action "remove" address)}}
+      <div class="item">
+        <div class="content">
+          <h2 class="header">Address {{add-number index 1}}</h2>
+          <div class="description">
+            {{address.address}}<br />
+            {{#if address.address_secondary}}
+              {{address.address_secondary}}<br />
+            {{/if}}
+            {{address.city}}, {{address.state}} {{address.zip}}
+          </div>
+        </div>
+      </div>
+    {{/cuppa-removable-container}}
+  {{/each}}
+{{else}}
+  {{#cuppa-form onSubmit=(route-action "save") changeset=(changeset newItem AddressValidations) as |form|}}
+    <div class="required field">
+      <label>Address</label>
+      {{input type="text" focus-out=(action (mut form.changeset.address))}}
+    </div>
+    <div class="field">
+      <label>Address Line 2</label>
+      {{input type="text" focus-out=(action (mut form.changeset.address_secondary))}}
+    </div>
+    <div class="fields">
+      <div class="required eight wide field">
+        <label>City</label>
+        {{input type="text" focus-out=(action (mut form.changeset.city))}}
+      </div>
+      <div class="required field">
+        <label>State</label>
+        {{#ui-dropdown class="search selection" selected=form.changeset.state onChange=(action (mut form.changeset.state)) as |execute mapper|}}
+          <div class="default text">Choices</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            {{#each usStates as |state|}}
+              <div class="item" data-value="{{map-value mapper state.value}}">
+                {{state.display}}
+              </div>
+            {{/each}}
+          </div>
+        {{/ui-dropdown}}
+      </div>
+      <div class="required five wide field">
+        <label>Zip</label>
+        {{input type="text" focus-out=(action (mut form.changeset.zip))}}
+      </div>
+    </div>
+  {{/cuppa-form}}
+{{/unless}}
