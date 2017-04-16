@@ -11,13 +11,13 @@ export default Route.extend({
 
     controller.set('navItems', [
       { label: 'Summary', link: 'summary', icon: 'user' },
-      { label: 'Addresses', link: 'addresses', count: model.get('addresses.length') },
-      { label: 'Courses', link: 'courses', count: model.get('courses.length') },
-      { label: 'Education', link: 'education', count: model.get('education.length') },
-      { label: 'Email Addresses', link: 'emails', count: model.get('emails.length') },
-      { label: 'Phone Numbers', link: 'phones', count: model.get('phones.length') },
-      { label: 'Skills', link: 'skills', count: model.get('skills.length') },
-      { label: 'Evaluations', link: 'evals', count: model.get('evaluations.length') },
+      { label: 'Addresses', link: 'addresses' },
+      { label: 'Courses', link: 'courses' },
+      { label: 'Education', link: 'education' },
+      { label: 'Email Addresses', link: 'emails' },
+      { label: 'Phone Numbers', link: 'phones' },
+      { label: 'Skills', link: 'skills' },
+      { label: 'Evaluations', link: 'evals' },
     ])
   }
 });
