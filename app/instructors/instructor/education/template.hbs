@@ -1,1 +1,21 @@
-{{outlet}}
+{{#unless newItem}}
+  <button onclick={{route-action "createNew" "education"}} class="fluid ui button"><i class="plus icon"></i> Add Education</button>
+  {{#each model.education as |education index|}}
+    <div class="ui vertical segment">
+      <h4 class="ui header">{{education.institution}} ({{education.type}})</h4>
+    </div>
+  {{/each}}
+{{else}}
+  {{#cuppa-form onSubmit=(route-action "save") changeset=(changeset newItem EducationValidations) as |form|}}
+    <div class="fields">
+      <div class="required ten wide field">
+        <label>Institution</label>
+        {{input type="text" value=form.changeset.institution}}
+      </div>
+      <div class="required six wide field">
+        <label>Type</label>
+        {{input type="text" value=form.changeset.type}}
+      </div>
+    </div>
+  {{/cuppa-form}}
+{{/unless}}
