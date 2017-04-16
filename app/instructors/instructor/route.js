@@ -17,7 +17,7 @@ export default Route.extend({
       { label: 'Email Addresses', link: 'emails' },
       { label: 'Phone Numbers', link: 'phones' },
       { label: 'Skills', link: 'skills' },
-      { label: 'Evaluations', link: 'evals' },
+      { label: 'Evaluations', link: 'evaluations' },
     ])
   }
 });
