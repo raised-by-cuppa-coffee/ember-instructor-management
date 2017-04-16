@@ -1,5 +1,6 @@
 {{#each items as |item|}}
   {{#link-to (concat "instructors.instructor." item.link) modelId class="item"}}
     {{item.label}}
+    {{#if (gt item.count -1)}}<span class="ui {{if (gt item.count 0) "blue" "red"}} circular label">{{item.count}}</span>{{/if}}
   {{/link-to}}
 {{/each}}
