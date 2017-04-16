@@ -4,16 +4,15 @@
       <img src="https://cdn2.iconfinder.com/data/icons/avatar-profile/449/avatar_user_default_contact_profile_male-512.png" alt="">
     </div>
     <div class="content">
-      <div class="header">{{model.firstName}} {{model.middleName}} {{model.lastName}}</div>
       <div class="description">
-        {{#cuppa-list}}
-          {{#each listItems as |item|}}
-            {{#cuppa-list-item}}
-              <i class="{{get item 'icon'}} icon"></i>
-              {{get item 'text'}} | {{get item 'count'}}
-            {{/cuppa-list-item}}
-          {{/each}}
-        {{/cuppa-list}}
+        {{#each listItems as |item|}}
+          <h3 class="ui header">
+            <span>
+              <i class="{{item.icon}} icon"></i>
+              {{item.text}} | <span class="ui {{if (gt item.count 0) "blue" "red"}} circular label">{{item.count}}</span>
+            </span>
+          </h3>
+        {{/each}}
         <p>A brief description about this instructor</p>
       </div>
     </div>
