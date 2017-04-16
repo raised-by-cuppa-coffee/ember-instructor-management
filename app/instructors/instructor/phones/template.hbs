@@ -1,1 +1,26 @@
-{{outlet}}
+{{#unless newItem}}
+  <button onclick={{route-action "createNew" "phone"}} class="fluid ui button"><i class="plus icon"></i> Add Phone Number</button>
+  {{#each model.phones as |phone index|}}
+    <div class="ui vertical segment">
+      <h4 class="ui header">{{phone.type}}</h4>
+      <p>{{phone.phone}} (ext. {{phone.extension}})</p>
+    </div>
+  {{/each}}
+{{else}}
+  {{#cuppa-form onSubmit=(route-action "save") changeset=(changeset newItem PhoneValidations) as |form|}}
+    <div class="fields">
+      <div class="required ten wide field">
+        <label>Phone Number</label>
+        {{input type="text" value=form.changeset.phone}}
+      </div>
+      <div class="three wide field">
+        <label>Extension</label>
+        {{input type="text" value=form.changeset.extension}}
+      </div>
+      <div class="required three wide field">
+        <label>Type</label>
+        {{input type="text" value=form.changeset.type}}
+      </div>
+    </div>
+  {{/cuppa-form}}
+{{/unless}}
