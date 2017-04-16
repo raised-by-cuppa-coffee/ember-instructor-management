@@ -1,1 +1,15 @@
-{{outlet}}
+{{#unless newItem}}
+  <button onclick={{route-action "createNew" "skill"}} class="fluid ui button"><i class="plus icon"></i> Add Skill</button>
+  {{#each model.skills as |skill index|}}
+    <div class="ui vertical segment">
+      <h4 class="ui header">{{skill.name}}</h4>
+    </div>
+  {{/each}}
+{{else}}
+  {{#cuppa-form onSubmit=(route-action "save") changeset=(changeset newItem SkillValidations) as |form|}}
+    <div class="required field">
+      <label>Skill</label>
+      {{input type="text" value=form.changeset.name}}
+    </div>
+  {{/cuppa-form}}
+{{/unless}}
