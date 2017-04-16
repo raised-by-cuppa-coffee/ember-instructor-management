@@ -27,9 +27,19 @@
         <label>City</label>
         {{input type="text" value=form.changeset.city}}
       </div>
-      <div class="required three wide field">
+      <div class="required field">
         <label>State</label>
-        {{input type="text" value=form.changeset.state}}
+        {{#ui-dropdown class="search selection" selected=form.changeset.state onChange=(action (mut form.changeset.state)) as |execute mapper|}}
+          <div class="default text">Choices</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            {{#each usStates as |state|}}
+              <div class="item" data-value="{{map-value mapper state.value}}">
+                {{state.display}}
+              </div>
+            {{/each}}
+          </div>
+        {{/ui-dropdown}}
       </div>
       <div class="required five wide field">
         <label>Zip</label>
