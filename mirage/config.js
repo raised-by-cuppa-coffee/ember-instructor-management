@@ -11,12 +11,16 @@ export default function () {
   this.post('/addresses');
 
   this.get('/courses');
+  this.post('/courses');
 
   this.get('/education');
+  this.post('/education');
 
   this.get('/emails');
+  this.post('/emails');
 
   this.get('/evaluations');
+  this.post('/evaluations');
 
   this.get('/instructors/:id')
   this.get('/instructors', function({ instructors }, { queryParams }) {
@@ -46,8 +50,10 @@ export default function () {
   });
 
   this.get('/phones');
+  this.post('/phones');
 
   this.get('/skills');
+  this.post('/skills');
 
   // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
   // this.namespace = '';    // make this `api`, for example, if your API is namespaced
