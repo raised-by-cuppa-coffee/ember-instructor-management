@@ -15,9 +15,9 @@ export default Route.extend({
       { label: 'Courses', link: 'courses' },
       { label: 'Education', link: 'education' },
       { label: 'Email Addresses', link: 'emails' },
-      { label: 'Evaluations', link: 'evals' },
       { label: 'Phone Numbers', link: 'phones' },
       { label: 'Skills', link: 'skills' },
+      { label: 'Evaluations', link: 'evals' },
     ])
   }
 });
