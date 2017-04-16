@@ -1,8 +1,12 @@
 {{#unless newItem}}
   <button onclick={{route-action "createNew" "skill"}} class="fluid ui button"><i class="plus icon"></i> Add Skill</button>
-  {{#each model.skills as |skill index|}}
+  {{#each model.skills as |skill|}}
     {{#cuppa-removable-container onRemove=(route-action "remove" skill)}}
-      <h4 class="ui header">{{skill.name}}</h4>
+      <div class="item">
+        <div class="content">
+          <h2 class="header">{{skill.name}}</h2>
+        </div>
+      </div>
     {{/cuppa-removable-container}}
   {{/each}}
 {{else}}

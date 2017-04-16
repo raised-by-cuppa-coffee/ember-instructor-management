@@ -1,8 +1,12 @@
 {{#unless newItem}}
   <button onclick={{route-action "createNew" "education"}} class="fluid ui button"><i class="plus icon"></i> Add Education</button>
-  {{#each model.education as |education index|}}
+  {{#each model.education as |education|}}
     {{#cuppa-removable-container onRemove=(route-action "remove" education)}}
-      <h4 class="ui header">{{education.institution}} ({{education.type}})</h4>
+      <div class="item">
+        <div class="content">
+          <h2 class="header">{{education.institution}} ({{education.type}})</h2>
+        </div>
+      </div>
     {{/cuppa-removable-container}}
   {{/each}}
 {{else}}

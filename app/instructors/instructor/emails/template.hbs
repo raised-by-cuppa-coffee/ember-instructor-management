@@ -1,8 +1,12 @@
 {{#unless newItem}}
   <button onclick={{route-action "createNew" "email"}} class="fluid ui button"><i class="plus icon"></i> Add Email Address</button>
-  {{#each model.emails as |email index|}}
+  {{#each model.emails as |email|}}
     {{#cuppa-removable-container onRemove=(route-action "remove" email)}}
-      <h4 class="ui header">{{email.email}}</h4>
+      <div class="item">
+        <div class="content">
+          <h2 class="header">{{email.email}}</h2>
+        </div>
+      </div>
     {{/cuppa-removable-container}}
   {{/each}}
 {{else}}

@@ -1,9 +1,15 @@
 {{#unless newItem}}
   <button onclick={{route-action "createNew" "phone"}} class="fluid ui button"><i class="plus icon"></i> Add Phone Number</button>
-  {{#each model.phones as |phone index|}}
+  {{#each model.phones as |phone|}}
     {{#cuppa-removable-container onRemove=(route-action "remove" phone)}}
-      <h4 class="ui header">{{phone.type}}</h4>
-      <p>{{phone.phone}} (ext. {{phone.extension}})</p>
+      <div class="item">
+        <div class="content">
+          <h2 class="header">{{phone.type}}</h2>
+          <div class="description">
+            {{phone.phone}} (ext. {{phone.extension}})
+          </div>
+        </div>
+      </div>
     {{/cuppa-removable-container}}
   {{/each}}
 {{else}}

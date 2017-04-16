@@ -1,13 +1,17 @@
 {{#unless newItem}}
   <button onclick={{route-action "createNew" "course"}} class="fluid ui button"><i class="plus icon"></i> Add Course</button>
-  {{#each model.courses as |course index|}}
+  {{#each model.courses as |course|}}
     {{#cuppa-removable-container onRemove=(route-action "remove" course)}}
-      <h4 class="ui header">{{course.name}} ({{course.level}})</h4>
-      <p>
-        Class Size: {{course.classSize}}<br />
-        From: {{moment-format course.startDate "YYYY-MM-DD"}}<br />
-        To: {{if course.endDate (moment-format course.endDate "YYYY-MM-DD") "Still Active"}}
-      </p>
+      <div class="item">
+        <div class="content">
+          <h2 class="header">{{course.name}} ({{course.level}})</h2>
+          <div class="description">
+            Class Size: {{course.classSize}}<br />
+            From: {{moment-format course.startDate "YYYY-MM-DD"}}<br />
+            To: {{if course.endDate (moment-format course.endDate "YYYY-MM-DD") "Still Active"}}
+          </div>
+        </div>
+      </div>
     {{/cuppa-removable-container}}
   {{/each}}
 {{else}}
