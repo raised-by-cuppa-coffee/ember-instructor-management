@@ -7,4 +7,10 @@ export default Controller.extend({
   newItem: null,
 
   CourseValidations,
+
+  actions: {
+    setDate(changeset, field, value) {
+      changeset.set(field, value);
+    }
+  }
 });
