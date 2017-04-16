@@ -1,5 +1,5 @@
 {{#unless newItem}}
-  <button onclick={{route-action "createNew" "address"}} class="fluid ui button"><i class="plus icon"></i> Create New</button>
+  <button onclick={{route-action "createNew" "address"}} class="fluid ui button"><i class="plus icon"></i> Add Address</button>
   {{#each model.addresses as |address index|}}
     <div class="ui vertical segment">
       <h4 class="ui header">Address {{add-number index 1}}</h4>
@@ -22,17 +22,19 @@
       <label>Address Line 2</label>
       {{input type="text" value=form.changeset.address_secondary}}
     </div>
-    <div class="required field">
-      <label>City</label>
-      {{input type="text" value=form.changeset.city}}
-    </div>
-    <div class="required field">
-      <label>State</label>
-      {{input type="text" value=form.changeset.state}}
-    </div>
-    <div class="required field">
-      <label>Zip</label>
-      {{input type="text" value=form.changeset.zip}}
+    <div class="fields">
+      <div class="required eight wide field">
+        <label>City</label>
+        {{input type="text" value=form.changeset.city}}
+      </div>
+      <div class="required three wide field">
+        <label>State</label>
+        {{input type="text" value=form.changeset.state}}
+      </div>
+      <div class="required five wide field">
+        <label>Zip</label>
+        {{input type="text" value=form.changeset.zip}}
+      </div>
     </div>
   {{/cuppa-form}}
 {{/unless}}
