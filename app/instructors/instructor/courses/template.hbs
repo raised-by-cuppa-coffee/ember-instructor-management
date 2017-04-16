@@ -19,15 +19,15 @@
     <div class="fields">
       <div class="required ten wide field">
         <label>Name</label>
-        {{input type="text" value=form.changeset.name}}
+        {{input type="text" focus-out=(action (mut form.changeset.name))}}
       </div>
       <div class="required three wide field">
         <label>Level</label>
-        {{input type="text" value=form.changeset.level}}
+        {{input type="text" focus-out=(action (mut form.changeset.level))}}
       </div>
       <div class="required three wide field">
         <label>Class Size</label>
-        {{input type="text" value=form.changeset.classSize}}
+        {{input type="text" focus-out=(action (mut form.changeset.classSize))}}
       </div>
     </div>
     <div class="fields">

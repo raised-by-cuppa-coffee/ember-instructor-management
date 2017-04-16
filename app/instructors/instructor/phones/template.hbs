@@ -17,11 +17,11 @@
     <div class="fields">
       <div class="required ten wide field">
         <label>Phone Number</label>
-        {{input type="text" value=form.changeset.phone}}
+        {{input type="text" focus-out=(action (mut form.changeset.phone))}}
       </div>
       <div class="three wide field">
         <label>Extension</label>
-        {{input type="text" value=form.changeset.extension}}
+        {{input type="text" focus-out=(action (mut form.changeset.extension))}}
       </div>
       <div class="required three wide field">
         <label>Type</label>

@@ -14,7 +14,7 @@
     <div class="fields">
       <div class="required ten wide field">
         <label>Institution</label>
-        {{input type="text" value=form.changeset.institution}}
+        {{input type="text" focus-out=(action (mut form.changeset.institution))}}
       </div>
       <div class="required six wide field">
         <label>Type</label>

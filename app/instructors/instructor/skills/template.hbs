@@ -12,8 +12,8 @@
 {{else}}
   {{#cuppa-form onSubmit=(route-action "save") changeset=(changeset newItem SkillValidations) as |form|}}
     <div class="required field">
-      <label>Skill</label>
-      {{input type="text" value=form.changeset.name}}
+      <label>Skill Name</label>
+      {{input type="text" focus-out=(action (mut form.changeset.name))}}
     </div>
   {{/cuppa-form}}
 {{/unless}}

@@ -13,7 +13,7 @@
   {{#cuppa-form onSubmit=(route-action "save") changeset=(changeset newItem EmailValidations) as |form|}}
     <div class="required field">
       <label>Email</label>
-      {{input type="text" value=form.changeset.email}}
+      {{input type="text" focus-out=(action (mut form.changeset.email))}}
     </div>
   {{/cuppa-form}}
 {{/unless}}
