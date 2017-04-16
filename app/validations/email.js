@@ -1,5 +1,8 @@
-import { validatePresence } from 'ember-changeset-validations/validators';
+import { validateFormat, validatePresence } from 'ember-changeset-validations/validators';
 
 export default {
-  email: validatePresence(true),
+  email: [
+    validateFormat({ type: 'email' }),
+    validatePresence(true),
+  ]
 };

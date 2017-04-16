@@ -1,6 +1,10 @@
-import { validatePresence } from 'ember-changeset-validations/validators';
+import { validateFormat, validateNumber, validatePresence } from 'ember-changeset-validations/validators';
 
 export default {
-  phone: validatePresence(true),
+  extension: validateNumber({ allowBlank: true, integer: true, positive: true }),
+  phone: [
+    validateFormat({ type: 'phone' }),
+    validatePresence(true),
+  ],
   type: validatePresence(true),
 };
