@@ -1,7 +1,7 @@
 {{#unless newItem}}
   <button onclick={{route-action "createNew" "address"}} class="fluid ui button"><i class="plus icon"></i> Add Address</button>
   {{#each model.addresses as |address index|}}
-    <div class="ui vertical segment">
+    {{#cuppa-removable-container onRemove=(route-action "remove" address)}}
       <h4 class="ui header">Address {{add-number index 1}}</h4>
       <p>
         {{address.address}}<br />
@@ -10,7 +10,7 @@
         {{/if}}
         {{address.city}}, {{address.state}} {{address.zip}}
       </p>
-    </div>
+    {{/cuppa-removable-container}}
   {{/each}}
 {{else}}
   {{#cuppa-form onSubmit=(route-action "save") changeset=(changeset newItem AddressValidations) as |form|}}

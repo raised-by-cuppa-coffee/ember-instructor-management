@@ -9,15 +9,19 @@ export default function () {
 
   this.get('/addresses');
   this.post('/addresses');
+  this.delete('/addresses/:id');
 
   this.get('/courses');
   this.post('/courses');
+  this.delete('/courses/:id');
 
   this.get('/education');
   this.post('/education');
+  this.delete('/education/:id');
 
   this.get('/emails');
   this.post('/emails');
+  this.delete('/emails/:id');
 
   this.get('/evaluations');
   this.post('/evaluations');
@@ -51,9 +55,11 @@ export default function () {
 
   this.get('/phones');
   this.post('/phones');
+  this.delete('/phones/:id');
 
   this.get('/skills');
   this.post('/skills');
+  this.delete('/skills/:id');
 
   // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
   // this.namespace = '';    // make this `api`, for example, if your API is namespaced

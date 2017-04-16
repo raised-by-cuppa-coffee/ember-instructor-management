@@ -1,10 +1,10 @@
 {{#unless newItem}}
   <button onclick={{route-action "createNew" "phone"}} class="fluid ui button"><i class="plus icon"></i> Add Phone Number</button>
   {{#each model.phones as |phone index|}}
-    <div class="ui vertical segment">
+    {{#cuppa-removable-container onRemove=(route-action "remove" phone)}}
       <h4 class="ui header">{{phone.type}}</h4>
       <p>{{phone.phone}} (ext. {{phone.extension}})</p>
-    </div>
+    {{/cuppa-removable-container}}
   {{/each}}
 {{else}}
   {{#cuppa-form onSubmit=(route-action "save") changeset=(changeset newItem PhoneValidations) as |form|}}

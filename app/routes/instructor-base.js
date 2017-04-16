@@ -11,11 +11,14 @@ export default Route.extend({
     createNew(modelName) {
       this.controller.set('newItem', this.get('store').createRecord(modelName));
     },
-    save(newModel) {
-      newModel.set('instructor', this.get('controller.model'));
+    remove(model) {
+      model.destroyRecord().catch(err => this.send('error', err));
+    },
+    save(model) {
+      model.set('instructor', this.get('controller.model'));
 
       // After successful save, clean up the controller
-      newModel.save().then(() => (
+      model.save().then(() => (
         this.controller.set('newItem', null))
       ).catch(err => this.send('error', err));
     }
