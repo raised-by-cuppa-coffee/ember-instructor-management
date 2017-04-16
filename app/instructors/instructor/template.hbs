@@ -1,0 +1,16 @@
+<div class="ui basic segment">
+  <h1 class="ui header">
+    {{model.firstName}} {{model.middleName}} {{model.lastName}}
+    <div class="sub header">
+      Member Since: {{moment-format model.createdAt "LL"}}
+    </div>
+  </h1>
+</div>
+<div class="ui grid">
+  <div class="four wide column">
+    {{cuppa-vertical-menu items=navItems model=model showCount=true}}
+  </div>
+  <div class="twelve wide column">
+    {{outlet}}
+  </div>
+</div>

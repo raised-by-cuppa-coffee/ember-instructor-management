@@ -7,5 +7,10 @@ export default Component.extend({
 
   firstName: '',
   lastName: '',
-  middleName: ''
+  middleName: '',
+
+  click(e) {
+    e.preventDefault();
+    this.get('onClick')();
+  }
 });

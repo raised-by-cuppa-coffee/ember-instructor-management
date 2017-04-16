@@ -3,6 +3,9 @@ import loadInitializers from 'ember-load-initializers';
 import Resolver from './resolver';
 import config from './config/environment';
 
+// Setting custom inflector rules
+import './models/custom-inflector-rules';
+
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
 const App = Ember.Application.extend({

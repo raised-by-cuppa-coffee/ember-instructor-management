@@ -1,0 +1,13 @@
+{{yield }}
+{{#each items as |item|}}
+  {{#link-to (concat "instructors.instructor." item.link) model.id class="item"}}
+    {{item.label}}
+    {{#if showCount}}
+      {{#if (gt (get model (concat item.link ".length")) -1)}}
+        <span class="ui {{if (gt (get model (concat item.link ".length") -1) 0) "blue" "red"}} circular label">
+          {{get model (concat item.link ".length")}}
+        </span>
+      {{/if}}
+    {{/if}}
+  {{/link-to}}
+{{/each}}

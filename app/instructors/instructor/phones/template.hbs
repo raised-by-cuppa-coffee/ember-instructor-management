@@ -1,0 +1,43 @@
+{{#unless newItem}}
+  <button onclick={{route-action "createNew" "phone"}} class="fluid ui button"><i class="plus icon"></i> Add Phone Number</button>
+  {{#each model.phones as |phone|}}
+    {{#cuppa-removable-container onRemove=(route-action "remove" phone)}}
+      <div class="item">
+        <div class="content">
+          <h2 class="header">{{phone.type}}</h2>
+          <div class="description">
+            {{phone.phone}} (ext. {{phone.extension}})
+          </div>
+        </div>
+      </div>
+    {{/cuppa-removable-container}}
+  {{/each}}
+{{else}}
+  {{#cuppa-form onSubmit=(route-action "save") changeset=(changeset newItem PhoneValidations) as |form|}}
+    <div class="fields">
+      <div class="required ten wide field">
+        <label>Phone Number</label>
+        {{input type="text" focus-out=(action (mut form.changeset.phone))}}
+      </div>
+      <div class="three wide field">
+        <label>Extension</label>
+        {{input type="text" focus-out=(action (mut form.changeset.extension))}}
+      </div>
+      <div class="required three wide field">
+        <label>Type</label>
+        {{#ui-dropdown class="search selection" selected=form.changeset.type onChange=(action (mut form.changeset.type)) as |execute mapper|}}
+          <div class="default text">Options...</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="item" data-value="">All Items</div>
+            {{#each types as |type|}}
+              <div class="item" data-value="{{map-value mapper type}}">
+                {{type}}
+              </div>
+            {{/each}}
+          </div>
+        {{/ui-dropdown}}
+      </div>
+    </div>
+  {{/cuppa-form}}
+{{/unless}}
