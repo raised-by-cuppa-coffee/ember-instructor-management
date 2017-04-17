@@ -12,5 +12,14 @@ export default Factory.extend({
   },
   createdAt() {
     return faker.date.recent(5);
+  },
+
+  afterCreate(instructor, server) {
+    server.createList('address', 2, { instructor });
+    server.createList('course', 5, { instructor });
+    server.createList('education', 2, { instructor });
+    server.createList('email', 3, { instructor });
+    server.createList('phone', 3, { instructor });
+    server.createList('skill', 4, { instructor });
   }
 });
