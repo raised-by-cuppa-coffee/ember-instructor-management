@@ -8,18 +8,22 @@ export default function () {
   */
 
   this.get('/addresses');
+  this.get('/addresses/:id');
   this.post('/addresses');
   this.delete('/addresses/:id');
 
   this.get('/courses');
+  this.get('/courses/:id');
   this.post('/courses');
   this.delete('/courses/:id');
 
   this.get('/education');
+  this.get('/education/:id');
   this.post('/education');
   this.delete('/education/:id');
 
   this.get('/emails');
+  this.get('/emails/:id');
   this.post('/emails');
   this.delete('/emails/:id');
 
@@ -54,10 +58,12 @@ export default function () {
   });
 
   this.get('/phones');
+  this.get('/phones/:id');
   this.post('/phones');
   this.delete('/phones/:id');
 
   this.get('/skills');
+  this.get('/skills/:id');
   this.post('/skills');
   this.delete('/skills/:id');
 

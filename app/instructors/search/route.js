@@ -26,7 +26,7 @@ export default Route.extend({
           limit: this.controller.get('limit'),
           skip: this.controller.get('limit') * page
         }
-      }).then(() => this.controller.set('activePage', page));
+      });
     },
     viewFull(instructorId) {
       this.transitionTo('instructors.instructor', instructorId);
