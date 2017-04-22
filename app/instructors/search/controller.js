@@ -1,17 +1,17 @@
 import Ember from 'ember';
+import paginationDefaults from '../../util/defaultPaginationParams';
 
 const { computed, Controller } = Ember;
 
-export default Controller.extend({
-  queryParams: ['q', 'limit', 'skip'],
+export default Controller.extend(paginationDefaults, {
+  queryParams: Object.keys(paginationDefaults).concat(['q']),
 
   q: '',
-  limit: 9,
-  skip: 0,
-  page: 1,
-  activePage: 1,
 
-  totalPages: computed('limit', 'model.meta.total', function() {
+  activePage: computed('skip', function() {
+    return Math.ceil(this.get('skip') / this.get('limit'));
+  }),
+  totalPages: computed('model.meta.total', function() {
     return Math.ceil(this.get('model.meta.total') / this.get('limit'));
   })
 });
