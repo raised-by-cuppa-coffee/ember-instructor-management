@@ -9,7 +9,7 @@ export default Controller.extend(paginationDefaults, {
   q: '',
 
   activePage: computed('skip', function() {
-    return this.get('skip') / this.get('limit');
+    return Math.ceil(this.get('skip') / this.get('limit'));
   }),
   totalPages: computed('model.meta.total', function() {
     return Math.ceil(this.get('model.meta.total') / this.get('limit'));

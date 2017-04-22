@@ -52,12 +52,12 @@ export default Component.extend({
       this.get('onPaginate')(page);
     },
     nextPage() {
-      if (this.get('activePage') <= this.get('totalPages')) {
+      if (this.get('activePage') + 1 < this.get('totalPages')) {
         this.send('activatePage', this.get('activePage') + 1);
       }
     },
     prevPage() {
-      if (this.get('activePage') >= 0) {
+      if (this.get('activePage') > 0) {
         this.send('activatePage', this.get('activePage') - 1);
       }
     }
