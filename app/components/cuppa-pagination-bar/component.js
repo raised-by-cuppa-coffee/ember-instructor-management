@@ -5,11 +5,9 @@ const { computed, Component } = Ember;
 export default Component.extend({
   classNames: ['ui', 'basic', 'buttons'],
 
-  // activePage: 0,
   totalPages: 0,
 
   activeBtn: computed('activePage', function() {
-    console.log('component', this.get('activePage'));
     return this.get('activePage') + 1;
   }),
   paginateButtons: computed('activePage', 'totalPages', function() {
@@ -34,10 +32,13 @@ export default Component.extend({
     let n = 0;
 
     while (n <= arrayLength - 1) {
-      let val = n + leftIndex + 1;
+      let val = n + leftIndex;
 
       if (val <= totalPages) {
-        buttonArray = buttonArray.concat([val]);
+        buttonArray = buttonArray.concat([{
+          value: val,
+          lbl: val + 1
+        }]);
       }
 
       n += 1;

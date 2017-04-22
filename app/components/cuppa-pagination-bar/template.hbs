@@ -3,7 +3,7 @@
 </button>
 
 {{#each paginateButtons as |btn|}}
-  <button class="ui button {{if (eq btn activeBtn) 'active'}}">{{btn}}</button>
+  <button {{action 'activatePage' btn.value}} class="ui button {{if (eq btn.lbl activeBtn) 'active'}}">{{btn.lbl}}</button>
 {{/each}}
 <button class="ui icon button" {{action 'nextPage'}}>
   <i class="right arrow icon"></i>
