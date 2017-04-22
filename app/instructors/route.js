@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import paginationDefaults from '../util/defaultPaginationParams';
 
-const { $, Route } = Ember;
+const { $, assign, Route } = Ember;
 
 export default Route.extend({
   setupController(controller) {
@@ -22,7 +23,7 @@ export default Route.extend({
         .catch(alert);
     },
     searchInstructors(queryParams) {
-      return this.transitionTo('instructors.search', { queryParams: { q: queryParams }});
+      return this.transitionTo('instructors.search', { queryParams: assign(paginationDefaults, { q: queryParams }) });
     }
   },
 });

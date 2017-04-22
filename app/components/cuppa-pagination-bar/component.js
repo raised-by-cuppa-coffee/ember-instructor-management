@@ -5,10 +5,11 @@ const { computed, Component } = Ember;
 export default Component.extend({
   classNames: ['ui', 'basic', 'buttons'],
 
-  activePage: 0,
+  // activePage: 0,
   totalPages: 0,
 
   activeBtn: computed('activePage', function() {
+    console.log('component', this.get('activePage'));
     return this.get('activePage') + 1;
   }),
   paginateButtons: computed('activePage', 'totalPages', function() {
